@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public final class TwoDArrays {
 
-    String[][] GenerateMarks(String[] studentArray, String[] assignArray) {
+    static String[][] GenerateMarks(String[] studentArray, String[] assignArray) {
 
         // create the 2D array.
         String[][] studentMarks = new String[studentArray.length+1][assignArray.length+1];
@@ -82,7 +82,6 @@ public final class TwoDArrays {
         for (String number : studentList) {
             studentArray[counter] = number;
             counter++;
-            output.write(number + "  ");
         }
 
         // Initialize the counter.
@@ -92,17 +91,15 @@ public final class TwoDArrays {
         for (String number2 : assignmentList) {
             assignArray[counter2] = number2;
             counter2++;
-            output.write(number2 + "  ");
         }
 
         // Call the generate marks function.
-        TwoDArrays obj = new TwoDArrays();
-        String[][] marks = obj.GenerateMarks(studentArray, assignArray);
+        String[][] marks = GenerateMarks(studentArray, assignArray);
 
         // This loop displays the 2D array.
         for (int row = 0; row < marks.length; row++) {
             for (int column = 0; column < marks[row].length; column++) {
-                output.write(marks[row][column] + " ");
+                output.write(marks[row][column] + ", ");
             }
             output.write("\n");
         }
